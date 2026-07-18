@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Luna Rose | Official Links</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root{
+--main:#ff84c1;
+--second:#b16dff;
+--text:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+background:
+radial-gradient(circle at top,#38204d 0%,#1b1027 30%,#09090d 100%);
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+color:white;
+
+}
+
+/* Fondo elegante */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+background:#ff84c122;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+top:-120px;
+left:-120px;
+
+animation:move1 10s infinite alternate;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:350px;
+height:350px;
+
+background:#a855f722;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+bottom:-120px;
+right:-120px;
+
+animation:move2 12s infinite alternate;
+
+}
+
+@keyframes move1{
+to{
+transform:translate(80px,60px);
+}
+}
+
+@keyframes move2{
+to{
+transform:translate(-70px,-50px);
+}
+}
+
+.card{
+
+width:420px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.15);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(0,0,0,.35);
+
+z-index:2;
+
+}
+
+.avatar{
+
+width:140px;
+height:140px;
+
+border-radius:50%;
+
+border:4px solid var(--main);
+
+margin:auto;
+
+overflow:hidden;
+
+box-shadow:
+0 0 20px var(--main),
+0 0 40px rgba(255,132,193,.5);
+
+}
+
+.avatar img{
+
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+h1{
+
+margin-top:20px;
+
+font-size:34px;
+
+letter-spacing:2px;
+
+}
+
+p{
+
+margin:15px 0 30px;
+
+color:#ddd;
+
+font-size:15px;
+
+line-height:24px;
+
+}
+
+.buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.btn{
+
+padding:16px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:bold;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.15);
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+background:linear-gradient(90deg,var(--main),var(--second));
+
+box-shadow:
+
+0 0 20px var(--main),
+0 0 40px var(--second);
+
+}
+
+.colorBar{
+
+margin-top:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+}
+
+.color{
+
+width:22px;
+height:22px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+border:2px solid white;
+
+transition:.2s;
+
+}
+
+.color:hover{
+
+transform:scale(1.2);
+
+}
+
+footer{
+
+margin-top:28px;
+
+font-size:12px;
+
+color:#bbb;
+
+}
+
+@media(max-width:500px){
+
+.card{
+
+width:92%;
+
+padding:25px;
+
+}
+
+h1{
+
+font-size:28px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="avatar">
+<img src="https://via.placeholder.com/300x300.png?text=Photo">
+</div>
+
+<h1>Luna Rose</h1>
+
+<p>
+Bienvenido a mi página oficial.<br>
+Aquí encontrarás todas mis redes sociales y plataformas.
+</p>
+
+<div class="buttons">
+
+<a class="btn" href="#" target="_blank">
+📸 Instagram
+</a>
+
+<a class="btn" href="#" target="_blank">
+🎵 TikTok
+</a>
+
+<a class="btn" href="#" target="_blank">
+🐦 X (Twitter)
+</a>
+
+<a class="btn" href="#" target="_blank">
+💬 Telegram
+</a>
+
+<a class="btn" href="#" target="_blank">
+🌐 Sitio Oficial
+</a>
+
+</div>
+
+<div class="colorBar">
+
+<div class="color" style="background:#ff84c1" onclick="theme('#ff84c1','#d946ef')"></div>
+
+<div class="color" style="background:#ffffff" onclick="theme('#ffffff','#c084fc')"></div>
+
+<div class="color" style="background:#8b5cf6" onclick="theme('#8b5cf6','#ec4899')"></div>
+
+</div>
+
+<footer>
+
+© 2026 • Official Website
+
+</footer>
+
+</div>
+
+<script>
+
+function theme(main,second){
+
+document.documentElement.style.setProperty('--main',main);
+document.documentElement.style.setProperty('--second',second);
+
+}
+
+</script>
+
+</body>
+</html>
