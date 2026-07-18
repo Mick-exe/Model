@@ -17,7 +17,7 @@
 
 --main:#ff84c1;
 --second:#9b5cff;
---white:#ffffff;
+--text:white;
 
 }
 
@@ -37,27 +37,24 @@ body{
 min-height:100vh;
 
 background:
-linear-gradient(
-135deg,
-#08070d,
-#1c1028,
-#09070d
-);
+radial-gradient(circle at top,#3b1d4f,#12091c 45%,#050507);
 
 color:white;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
 
-overflow-y:auto;
-
 padding:30px 15px;
+
+overflow-y:auto;
 
 }
 
 
-/* luces de fondo */
+/* luces del fondo */
 
 body::before{
 
@@ -65,17 +62,19 @@ content:"";
 
 position:fixed;
 
-width:350px;
-height:350px;
+width:400px;
+height:400px;
 
-background:#ff84c144;
+background:#ff84c155;
 
 border-radius:50%;
 
 filter:blur(120px);
 
-top:-100px;
-left:-100px;
+top:-150px;
+left:-150px;
+
+z-index:0;
 
 }
 
@@ -89,14 +88,16 @@ position:fixed;
 width:350px;
 height:350px;
 
-background:#9b5cff44;
+background:#8b5cf655;
 
 border-radius:50%;
 
 filter:blur(120px);
 
-bottom:-100px;
-right:-100px;
+bottom:-120px;
+right:-120px;
+
+z-index:0;
 
 }
 
@@ -104,11 +105,16 @@ right:-100px;
 
 .card{
 
+
 width:420px;
 
-background:rgba(255,255,255,.07);
+max-width:100%;
+
+background:rgba(255,255,255,.08);
 
 border:1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
 
 border-radius:25px;
 
@@ -116,14 +122,9 @@ padding:35px;
 
 text-align:center;
 
-backdrop-filter:blur(15px);
-
 box-shadow:
 
 0 0 40px rgba(0,0,0,.5);
-
-
-position:relative;
 
 z-index:2;
 
@@ -131,10 +132,10 @@ z-index:2;
 }
 
 
-
 .avatar{
 
 width:150px;
+
 height:150px;
 
 margin:auto;
@@ -145,11 +146,9 @@ overflow:hidden;
 
 border:4px solid var(--main);
 
-
 box-shadow:
 
 0 0 20px var(--main);
-
 
 }
 
@@ -158,6 +157,7 @@ box-shadow:
 .avatar img{
 
 width:100%;
+
 height:100%;
 
 object-fit:cover;
@@ -172,25 +172,17 @@ margin-top:20px;
 
 font-size:32px;
 
-letter-spacing:2px;
-
-text-shadow:
-
-0 0 15px var(--main);
-
 }
 
 
 
 .description{
 
-margin:20px 0;
+margin:15px 0 25px;
 
 color:#ddd;
 
 font-size:15px;
-
-line-height:24px;
 
 }
 
@@ -210,22 +202,23 @@ gap:15px;
 
 .btn{
 
+display:block;
+
 padding:15px;
 
 border-radius:15px;
+
+text-decoration:none;
+
+color:white;
 
 background:rgba(255,255,255,.08);
 
 border:1px solid rgba(255,255,255,.2);
 
-color:white;
-
-text-decoration:none;
-
-font-weight:bold;
-
 transition:.3s;
 
+font-weight:500;
 
 }
 
@@ -233,38 +226,32 @@ transition:.3s;
 
 .btn:hover{
 
-
 transform:translateY(-4px);
-
 
 background:
 
-linear-gradient(
-90deg,
-var(--main),
-var(--second)
-);
+linear-gradient(90deg,var(--main),var(--second));
 
 
 box-shadow:
 
 0 0 20px var(--main),
-0 0 40px var(--second);
-
+0 0 35px var(--second);
 
 }
 
 
 
-.colors{
 
-margin-top:30px;
+.colors{
 
 display:flex;
 
 justify-content:center;
 
 gap:15px;
+
+margin-top:30px;
 
 }
 
@@ -273,6 +260,7 @@ gap:15px;
 .color{
 
 width:25px;
+
 height:25px;
 
 border-radius:50%;
@@ -280,6 +268,14 @@ border-radius:50%;
 cursor:pointer;
 
 border:2px solid white;
+
+}
+
+
+
+.color:hover{
+
+transform:scale(1.2);
 
 }
 
@@ -297,7 +293,8 @@ color:#aaa;
 
 
 
-@media(max-width:500px){
+
+@media(max-width:600px){
 
 
 body{
@@ -309,23 +306,22 @@ align-items:flex-start;
 
 .card{
 
-width:100%;
+margin-top:20px;
 
 padding:25px;
 
 }
 
 
-
 h1{
 
-font-size:26px;
+font-size:27px;
 
 }
 
 
-
 }
+
 
 
 </style>
@@ -336,9 +332,7 @@ font-size:26px;
 <body>
 
 
-
 <div class="card">
-
 
 
 <div class="avatar">
@@ -350,18 +344,16 @@ font-size:26px;
 
 
 <h1>
-
 Luna Rose
-
 </h1>
 
 
 
 <div class="description">
 
-Página oficial de enlaces.<br>
+Official social links<br>
 
-Encuentra aquí todas mis redes sociales.
+Follow my latest updates
 
 </div>
 
@@ -397,14 +389,18 @@ Encuentra aquí todas mis redes sociales.
 
 
 <a class="btn" href="#" target="_blank">
-🌐 Página oficial
+🌐 Website
 </a>
 
 
 <a class="btn" href="#" target="_blank">
-⭐ Mi comunidad
+⭐ Community
 </a>
 
+
+<a class="btn" href="#" target="_blank">
+📩 Contact
+</a>
 
 
 </div>
@@ -417,19 +413,67 @@ Encuentra aquí todas mis redes sociales.
 
 <div class="color"
 style="background:#ff84c1"
-onclick="changeColor('#ff84c1','#9b5cff')">
+onclick="changeColor('#ff84c1','#d946ef')">
 </div>
 
 
 
 <div class="color"
 style="background:white"
-onclick="changeColor('#ffffff','#9b5cff')">
+onclick="changeColor('#ffffff','#a855f7')">
 </div>
 
 
 
 <div class="color"
-style="background:#9b5cff"
-onclick="changeColor('#9b5cff','#ff84c1')">
-</div
+style="background:#8b5cf6"
+onclick="changeColor('#8b5cf6','#ec4899')">
+</div>
+
+
+
+</div>
+
+
+
+<footer>
+
+© 2026 Official Page
+
+</footer>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+function changeColor(main,second){
+
+
+document.documentElement.style.setProperty(
+'--main',
+main
+);
+
+
+document.documentElement.style.setProperty(
+'--second',
+second
+);
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
