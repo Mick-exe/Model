@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,36 +12,52 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
+
 :root{
+
 --main:#ff84c1;
---second:#b16dff;
---text:#ffffff;
+--second:#9b5cff;
+--white:#ffffff;
+
 }
 
+
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Poppins,sans-serif;
+
 }
+
 
 body{
 
-background:
-radial-gradient(circle at top,#38204d 0%,#1b1027 30%,#09090d 100%);
-
 min-height:100vh;
+
+background:
+linear-gradient(
+135deg,
+#08070d,
+#1c1028,
+#09070d
+);
+
+color:white;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-overflow:hidden;
-color:white;
+overflow-y:auto;
+
+padding:30px 15px;
 
 }
 
-/* Fondo elegante */
+
+/* luces de fondo */
 
 body::before{
 
@@ -47,21 +65,20 @@ content:"";
 
 position:fixed;
 
-width:450px;
-height:450px;
+width:350px;
+height:350px;
 
-background:#ff84c122;
+background:#ff84c144;
 
 border-radius:50%;
 
 filter:blur(120px);
 
-top:-120px;
-left:-120px;
-
-animation:move1 10s infinite alternate;
+top:-100px;
+left:-100px;
 
 }
+
 
 body::after{
 
@@ -72,38 +89,24 @@ position:fixed;
 width:350px;
 height:350px;
 
-background:#a855f722;
+background:#9b5cff44;
 
 border-radius:50%;
 
 filter:blur(120px);
 
-bottom:-120px;
-right:-120px;
-
-animation:move2 12s infinite alternate;
+bottom:-100px;
+right:-100px;
 
 }
 
-@keyframes move1{
-to{
-transform:translate(80px,60px);
-}
-}
 
-@keyframes move2{
-to{
-transform:translate(-70px,-50px);
-}
-}
 
 .card{
 
 width:420px;
 
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(16px);
+background:rgba(255,255,255,.07);
 
 border:1px solid rgba(255,255,255,.15);
 
@@ -113,52 +116,75 @@ padding:35px;
 
 text-align:center;
 
-box-shadow:0 0 40px rgba(0,0,0,.35);
+backdrop-filter:blur(15px);
+
+box-shadow:
+
+0 0 40px rgba(0,0,0,.5);
+
+
+position:relative;
 
 z-index:2;
 
+
 }
+
+
 
 .avatar{
 
-width:140px;
-height:140px;
-
-border-radius:50%;
-
-border:4px solid var(--main);
+width:150px;
+height:150px;
 
 margin:auto;
 
+border-radius:50%;
+
 overflow:hidden;
 
+border:4px solid var(--main);
+
+
 box-shadow:
-0 0 20px var(--main),
-0 0 40px rgba(255,132,193,.5);
+
+0 0 20px var(--main);
+
 
 }
+
+
 
 .avatar img{
 
 width:100%;
 height:100%;
+
 object-fit:cover;
 
 }
+
+
 
 h1{
 
 margin-top:20px;
 
-font-size:34px;
+font-size:32px;
 
 letter-spacing:2px;
 
+text-shadow:
+
+0 0 15px var(--main);
+
 }
 
-p{
 
-margin:15px 0 30px;
+
+.description{
+
+margin:20px 0;
 
 color:#ddd;
 
@@ -168,7 +194,9 @@ line-height:24px;
 
 }
 
-.buttons{
+
+
+.links{
 
 display:flex;
 
@@ -178,40 +206,57 @@ gap:15px;
 
 }
 
+
+
 .btn{
 
-padding:16px;
+padding:15px;
 
-border-radius:14px;
-
-text-decoration:none;
-
-color:white;
-
-font-weight:bold;
+border-radius:15px;
 
 background:rgba(255,255,255,.08);
 
-border:1px solid rgba(255,255,255,.15);
+border:1px solid rgba(255,255,255,.2);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
 
 transition:.3s;
 
+
 }
+
+
 
 .btn:hover{
 
-transform:translateY(-3px);
 
-background:linear-gradient(90deg,var(--main),var(--second));
+transform:translateY(-4px);
+
+
+background:
+
+linear-gradient(
+90deg,
+var(--main),
+var(--second)
+);
+
 
 box-shadow:
 
 0 0 20px var(--main),
 0 0 40px var(--second);
 
+
 }
 
-.colorBar{
+
+
+.colors{
 
 margin-top:30px;
 
@@ -219,14 +264,16 @@ display:flex;
 
 justify-content:center;
 
-gap:18px;
+gap:15px;
 
 }
 
+
+
 .color{
 
-width:22px;
-height:22px;
+width:25px;
+height:25px;
 
 border-radius:50%;
 
@@ -234,114 +281,155 @@ cursor:pointer;
 
 border:2px solid white;
 
-transition:.2s;
-
 }
 
-.color:hover{
 
-transform:scale(1.2);
-
-}
 
 footer{
 
-margin-top:28px;
+margin-top:30px;
 
 font-size:12px;
 
-color:#bbb;
+color:#aaa;
 
 }
 
+
+
 @media(max-width:500px){
+
+
+body{
+
+align-items:flex-start;
+
+}
+
 
 .card{
 
-width:92%;
+width:100%;
 
 padding:25px;
 
 }
 
+
+
 h1{
 
-font-size:28px;
+font-size:26px;
 
 }
 
+
+
 }
+
 
 </style>
+
 </head>
+
 
 <body>
 
+
+
 <div class="card">
 
+
+
 <div class="avatar">
-<img src="https://via.placeholder.com/300x300.png?text=Photo">
+
+<img src="https://via.placeholder.com/300">
+
 </div>
 
-<h1>Luna Rose</h1>
 
-<p>
-Bienvenido a mi página oficial.<br>
-Aquí encontrarás todas mis redes sociales y plataformas.
-</p>
 
-<div class="buttons">
+<h1>
+
+Luna Rose
+
+</h1>
+
+
+
+<div class="description">
+
+Página oficial de enlaces.<br>
+
+Encuentra aquí todas mis redes sociales.
+
+</div>
+
+
+
+
+<div class="links">
+
 
 <a class="btn" href="#" target="_blank">
 📸 Instagram
 </a>
 
+
 <a class="btn" href="#" target="_blank">
 🎵 TikTok
 </a>
 
+
 <a class="btn" href="#" target="_blank">
-🐦 X (Twitter)
+🐦 X / Twitter
 </a>
+
 
 <a class="btn" href="#" target="_blank">
 💬 Telegram
 </a>
 
+
 <a class="btn" href="#" target="_blank">
-🌐 Sitio Oficial
+▶ YouTube
 </a>
 
-</div>
 
-<div class="colorBar">
+<a class="btn" href="#" target="_blank">
+🌐 Página oficial
+</a>
 
-<div class="color" style="background:#ff84c1" onclick="theme('#ff84c1','#d946ef')"></div>
 
-<div class="color" style="background:#ffffff" onclick="theme('#ffffff','#c084fc')"></div>
+<a class="btn" href="#" target="_blank">
+⭐ Mi comunidad
+</a>
 
-<div class="color" style="background:#8b5cf6" onclick="theme('#8b5cf6','#ec4899')"></div>
 
-</div>
-
-<footer>
-
-© 2026 • Official Website
-
-</footer>
 
 </div>
 
-<script>
 
-function theme(main,second){
 
-document.documentElement.style.setProperty('--main',main);
-document.documentElement.style.setProperty('--second',second);
 
-}
+<div class="colors">
 
-</script>
 
-</body>
-</html>
+<div class="color"
+style="background:#ff84c1"
+onclick="changeColor('#ff84c1','#9b5cff')">
+</div>
+
+
+
+<div class="color"
+style="background:white"
+onclick="changeColor('#ffffff','#9b5cff')">
+</div>
+
+
+
+<div class="color"
+style="background:#9b5cff"
+onclick="changeColor('#9b5cff','#ff84c1')">
+</div
